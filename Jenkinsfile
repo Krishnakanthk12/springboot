@@ -42,7 +42,7 @@ pipeline {
 
         stage('Deploy on Kubernetes') {
             steps {
-                sh 'kubectl apply -f /var/lib/jenkins/workspace/opsverse/pod.yaml'
+                sh 'kubectl apply -f /var/lib/jenkins/workspace/opsverse/values.yaml'
                 sh 'kubectl rollout restart deployment loadbalancer-pod'
             }
         }
